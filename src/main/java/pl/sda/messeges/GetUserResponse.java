@@ -1,15 +1,16 @@
-package pl.sda.requests;
+package pl.sda.messeges;
 
 import org.codehaus.jackson.map.annotate.JsonSerialize;
 
 /**
- * Created by RENT on 2017-03-06.
+ * to co przychodzi od servera
  */
 @JsonSerialize(include = JsonSerialize.Inclusion.NON_NULL)
-public class CreateUserRequest {
+public class GetUserResponse {
     private String name;
     private String login;
     private String mail;
+    private String id;
 
     public String getName() {
         return name;
@@ -35,5 +36,11 @@ public class CreateUserRequest {
         this.mail = mail;
     }
 
+    public String getId() {
+        return id;
+    }
 
+    public void setId(String id) {
+        this.id = id;
+    }
 }

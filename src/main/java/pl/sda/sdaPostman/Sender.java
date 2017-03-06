@@ -2,16 +2,16 @@ package pl.sda.sdaPostman;
 
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 import pl.sda.utils.HttpUtils;
 
 import java.io.IOException;
 
 /**
- * Created by RENT on 2017-03-06.
+ * wysylka zapytania i odebranie danych
  */
 public class Sender { //fasada http klienta
 
@@ -23,5 +23,13 @@ public class Sender { //fasada http klienta
 
         HttpResponse response = httpClient.execute(post);
         return HttpUtils.parseResponse(response); //po wywolaniu idzie przez Util i wychodzi String
+    }
+
+    public static String getUser(String url, String id) throws IOException {
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpGet get = new HttpGet(url+"?id="+id);
+
+        HttpResponse response = httpClient.execute(get);
+        return HttpUtils.parseResponse(response);
     }
 }
