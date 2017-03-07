@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SDAPostman:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="sda-postman-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="SDAPostman:war exploded" />
-    </root>
-  </artifact>
-</component>
